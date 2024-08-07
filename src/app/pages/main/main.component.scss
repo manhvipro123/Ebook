@@ -1,0 +1,33 @@
+#main-container {
+  height: 100%;
+  width: 100%;
+
+  #navbar {
+    width: calc(100% - 16px);
+    padding: 8px;
+  }
+
+  #main {
+    width: calc(100% - 16px);
+    margin: 0 8px 8px 8px;
+    height: calc(100% - 16px - 64px - 8px);
+    display: flex;
+    flex-direction: row;
+
+    #sidebar {
+      width: 5%;
+      height: 100%;
+      flex-shrink: 0;
+      min-width: 105.31px;
+      min-height: 400px;
+
+    }
+
+    #content {
+      flex-grow: 1; // Allow content to grow and fill the remaining space
+      height: 100%;
+      min-height: 400px;
+      margin-left: 8px;
+    }
+  }
+}

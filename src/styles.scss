@@ -1,0 +1,120 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use '@angular/material-experimental' as matx;
+
+
+// Plus imports for other components in your app.
+
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$light-theme: matx.define-theme(
+                (
+                        color: (
+                                theme-type: light,
+                                primary: matx.$m3-green-palette,
+                                tertiary:matx.$m3-yellow-palette,
+                        ),
+                        typography: (
+                                brand-family: "Lexend, sans-serif",
+                                plain-family: "Lexend, sans-serif",
+                        ),
+                        density: (
+                                scale: 0,
+                        ),
+                )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($light-theme);
+  @include matx.color-variants-back-compat($light-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: "Lexend", sans-serif;
+}
+
+:root {
+  --heading-font: "Lexend", sans-serif;
+  --text-font: "Lexend", sans-serif;
+
+  --font-heading: var(--heading-font);
+  --font-heading-1: bold 3.125rem/3.5rem var(--font-heading);
+  --font-heading-2: bold 2.75rem/3rem var(--font-heading);
+  --font-heading-3: bold 2.25rem/2.5rem var(--font-heading);
+  --font-heading-4: bold 1.75rem/2rem var(--font-heading);
+  --font-heading-5: bold 1.5rem/1.75rem var(--font-heading);
+  --font-heading-6: bold 1.25rem/1.5rem var(--font-heading);
+
+  --font-text: var(--text-font);
+  --font-text-xl: normal 1.1875rem/1.75rem var(--font-text);
+  --font-text-l: normal 1.0625rem/1.75rem var(--font-text);
+  --font-text-l-2: normal 1.0625rem/1.5rem var(--font-text);
+  --font-text-m: normal 1rem/1.5rem var(--font-text);
+  --font-text-m-2: normal 1rem/1.25rem var(--font-text);
+  --font-text-s: normal 0.8125rem/1.25rem var(--font-text);
+  --font-text-s-2: normal 0.8125rem/1rem var(--font-text);
+  --font-text-xs: normal 0.6875rem/1rem var(--font-text);
+  --font-text-xs-2: normal 0.6875rem/0.8125rem var(--font-text);
+
+  --font-text-xl-bold: 600 1.1875rem/1.75rem var(--font-text);
+  --font-text-l-bold: 600 1.0625rem/1.75rem var(--font-text);
+  --font-text-l-2-bold: 600 1.0625rem/1.5rem var(--font-text);
+  --font-text-m-bold: 600 1rem/1.5rem var(--font-text);
+  --font-text-m-2-bold: 600 1rem/1.25rem var(--font-text);
+  --font-text-s-bold: 600 0.8125rem/1.25rem var(--font-text);
+  --font-text-s-2-bold: 600 0.8125rem/1rem var(--font-text);
+  --font-text-xs-bold: 600 0.6875rem/1rem var(--font-text);
+  --font-text-xs-2-bold: 600 0.6875rem/0.8125rem var(--font-text);
+
+  --text-01: #53C300;
+  --text-02: #46A500;
+  --text-03: #388800;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+

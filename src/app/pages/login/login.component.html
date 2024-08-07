@@ -1,0 +1,93 @@
+<div id="login-container">
+  @if (isLoadingSignIn) {
+    <div class="loading-spinner-overlay">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+  }
+  <div id="back">
+    <div class="backRight"></div>
+    <div class="backLeft"></div>
+  </div>
+  <div id="slideBox" #slideBox>
+    <div class="topLayer" #topLayer>
+      <div class="left">
+        <div class="content">
+          <h2>
+            <b
+              >Nothing to show here, please go back if you want to sign in to
+              our app ^^</b
+            >
+          </h2>
+          <button id="goLeft" class="off" #goLeft>Go back</button>
+          <!--          <button mat-flat-button color="primary">Sign up</button>-->
+        </div>
+      </div>
+      <div class="right">
+        <div class="content">
+          <button id="goRight" class="off" #goRight>Change theme</button>
+          <h2><b>Login</b></h2>
+          @if (!isSignInWithGoogle) {
+            <form method="post" onsubmit="return false;">
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <mat-form-field appearance="outline">
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    [(ngModel)]="email"
+                    [type]="'email'"
+                    name="email"
+                  />
+                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+                <label class="form-label">Password</label>
+                <mat-form-field appearance="outline">
+                  <input
+                    matInput
+                    placeholder="Placeholder"
+                    [(ngModel)]="password"
+                    [type]="'password'"
+                    name="password"
+                  />
+                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+              </div>
+              <button
+                id="admin-login"
+                type="button"
+                (click)="signInWithStaticUser()"
+                mat-flat-button
+                color="primary"
+              >
+                Sign in
+              </button>
+            </form>
+          }
+
+          <button
+            id="login"
+            type="submit"
+            (click)="signInWithGoogle()"
+            mat-flat-button
+            color="primary"
+          >
+            <img src="assets/images/google_logo.png" alt="google logo" />
+            Sign in with Google
+          </button>
+
+          @if (isSignInWithGoogle) {
+            <button
+              id="admin-change"
+              type="button"
+              (click)="isSignInWithGoogle = !isSignInWithGoogle"
+              mat-flat-button
+              color="primary"
+            >
+              Sign in with static user
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

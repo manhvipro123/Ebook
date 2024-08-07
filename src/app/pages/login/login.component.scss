@@ -1,0 +1,190 @@
+#login-container {
+  height: 100%;
+  width: 100%;
+
+  .loading-spinner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+  }
+
+  .backRight {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background: #fff url("../../../assets/images/wp101.jpg") no-repeat 50% 50%;
+  }
+
+  .backLeft {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background: #fff url("../../../assets/images/wp150.jpg") no-repeat 50% 50%;
+  }
+
+  #back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -999;
+  }
+
+  #slideBox {
+    width: 50%;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 50%;
+    position: absolute;
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: margin-left 0.5s ease;
+  }
+
+  .topLayer {
+    width: 200%;
+    height: 100%;
+    position: relative;
+    left: -100%;
+    transition: margin-left 0.5s ease;
+  }
+
+  .animate-right {
+    margin-left: 0 !important;
+  }
+
+  .animate-left {
+    margin-left: 50% !important;
+  }
+
+  .animate-top-layer-right {
+    margin-left: 100% !important;
+  }
+
+  .animate-top-layer-left {
+    margin-left: 0 !important;
+  }
+
+  .left {
+    width: 50%;
+    height: 100%;
+    background: #2c3034;
+    left: 0;
+    position: absolute;
+    color: white;
+  }
+
+  .right {
+    width: 50%;
+    height: 100%;
+    background: #f9f9f9;
+    right: 0;
+    position: absolute;
+  }
+
+  .content {
+    width: fit-content;
+    top: 30%;
+    position: absolute;
+    left: 50%;
+    margin: 0 auto 0 -125px;
+  }
+
+  .content h2 {
+    font-weight: 300;
+    font-size: 35px;
+  }
+
+  button {
+    padding: 10px 16px;
+    width: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    border: 0;
+    outline: 0;
+    margin: 15px 15px 15px 0;
+    transition: all 0.25s;
+  }
+
+  button:hover {
+    cursor: pointer;
+    box-shadow:
+      0 4px 7px rgba(0, 0, 0, 0.1),
+      0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .off {
+    background: none;
+    box-shadow: none;
+  }
+
+  .right .off:hover {
+    cursor: pointer;
+    background: #eee;
+    box-shadow: none;
+  }
+
+  .left .off:hover {
+    cursor: pointer;
+    box-shadow: none;
+    background: #363a3d;
+  }
+
+  input {
+    //background: transparent;
+    //border: 0;
+    //outline: 0;
+    //border-bottom: 1px solid #45494C;
+    //font-size: 14px;
+    //color: #959595;
+    //padding: 8px 0;
+    //margin-top: 20px;
+  }
+
+  button#goLeft {
+    color: white;
+  }
+
+  button#login,
+  button#admin-login,
+  button#admin-change {
+    height: 60px;
+    width: 270px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+  }
+}
+
+:host {
+  ::ng-deep .mdc-button__label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+}

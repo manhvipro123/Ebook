@@ -1,0 +1,21 @@
+
+
+#navbar {
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  #avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  #avatar:hover{
+    border: 3px solid var(--text-01);
+  }
+}
